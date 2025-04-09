@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoPost - Publication Réseaux Sociaux</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AutoPost</h1>
+            <p>Automatisez vos publications sur Instagram et TikTok</p>
+        </header>
+
+        <section class="auth-section">
+            <h2>Configuration des Accès</h2>
+            
+            <div class="auth-form">
+                <h3>Instagram</h3>
+                <input type="text" id="insta-username" placeholder="Nom d'utilisateur Instagram">
+                <input type="password" id="insta-password" placeholder="Mot de passe Instagram">
+                <!-- REMPLACEZ CE COMMENTAIRE PAR VOTRE TOKEN INSTAGRAM SI VOUS EN AVEZ UN -->
+                <!-- <input type="text" id="insta-token" placeholder="Token API Instagram"> -->
+            </div>
+
+            <div class="auth-form">
+                <h3>TikTok</h3>
+                <input type="text" id="tiktok-username" placeholder="Nom d'utilisateur TikTok">
+                <input type="password" id="tiktok-password" placeholder="Mot de passe TikTok">
+                <!-- REMPLACEZ CE COMMENTAIRE PAR VOTRE TOKEN TIKTOK SI VOUS EN AVEZ UN -->
+                <!-- <input type="text" id="tiktok-token" placeholder="Token API TikTok"> -->
+            </div>
+
+            <button id="save-auth">Enregistrer les identifiants</button>
+            <p class="note">Note: Les identifiants sont stockés localement dans votre navigateur uniquement.</p>
+        </section>
+
+        <section class="upload-section">
+            <h2>Nouvelle Publication</h2>
+            <div class="upload-area" id="drop-zone">
+                <input type="file" id="video-upload" accept="video/*" style="display: none;">
+                <label for="video-upload" class="upload-label">
+                    <span>Glissez-déposez votre vidéo ici ou cliquez pour sélectionner</span>
+                </label>
+            </div>
+
+            <div class="caption-area">
+                <textarea id="post-caption" placeholder="Légende pour votre publication..."></textarea>
+                <div class="options">
+                    <label>
+                        <input type="checkbox" id="post-to-insta"> Publier sur Instagram
+                    </label>
+                    <label>
+                        <input type="checkbox" id="post-to-tiktok"> Publier sur TikTok
+                    </label>
+                </div>
+            </div>
+
+            <button id="publish-btn">Publier</button>
+        </section>
+
+        <section class="schedule-section">
+            <h2>Programmation</h2>
+            <label for="schedule-time">Programmer la publication:</label>
+            <input type="datetime-local" id="schedule-time">
+            <button id="schedule-btn">Programmer</button>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
